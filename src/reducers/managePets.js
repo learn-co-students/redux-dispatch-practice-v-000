@@ -20,5 +20,5 @@ export function dispatch(action){
 
 export function render(){
   const el = document.getElementById('container')
-  el.innerHTML = `<ul>${state.pets.map(pet => `<li>${pet.name}</li>`)}</ul>`
+  el.innerHTML = `<ul>${state.pets.map(pet => `<li>${pet.name}</li>``)}</ul>`
 }
