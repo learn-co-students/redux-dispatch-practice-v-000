@@ -1,25 +1,40 @@
 export let state;
 
-export function managePets(state={pets: []}, action){
+export const managePets = (state = {
+  pets: [],
+}, action) => {
   switch(action.type) {
     case "ADD_PET":
-      return Object.assign({}, state, {pets: [...state.pets, action.pet]})
+      return {
+        ...state,
+        pets: [
+          ...state.pets,
+          action.pet
+        ]
+      };
     case "REMOVE_PET":
-      return ({pets: state.pets.filter((pet) => pet.id !== action.id)})
+      const petIndex = state.pets.findIndex(pet => pet.id === action.id);
+      return {
+        ...state,
+        pets: [
+          ...state.pets.slice(0, petIndex),
+          ...state.pets.slice(petIndex + 1)
+        ]
+      };
     default:
-      return state
+      return state;
   }
 }
 
-export function dispatch(action){
-  state = managePets(state, action)
-  render()
-}
+export const dispatch = (action) => {
+  state = managePets(state, action);
+  render();
+};
 
-export function render(){
-  let res = '<ul>'
-  res += state.pets.map((pet) => '<li>' + pet.name + '</li>').join("")
-  res += '</ul>'
-
-  document.getElementById('container').innerHTML = res
+export const render = () => {
+  let container = document.getElementById('container');
+  let petsList = state.pets.map((pet) => {
+    return `<li>${pet.name}</li>`;
+  }).join(' ');
+  container.innerHTML = `<ul>${petsList}</ul>`;
 }
