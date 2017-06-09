@@ -18,8 +18,9 @@ export function dispatch(action){
 }
 
 export function render(){
-	var container = document.getElementById('container');
- 
+	var pets = state.pets.map(pet => (
+		`<li>${pet.name}</li>`
+	)).join()
+ 	document.getElementById('container').innerHTML = `<ul>${pets}</ul>`
 }
 
-dispatch({type: '@@INIT'})
