@@ -41,7 +41,10 @@
     "mocha": "^3.0.1",
     "mocha-multi": "^0.9.1",
     "node-inspector": "^0.12.8",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "node-inspector": "^1.1.1",
+    "react-addons-test-utils": "^15.3.0",
+    "react-test-renderer": "^15.5.4"
   },
   "dependencies": {
     "mocha-jsdom": "^1.1.0",
