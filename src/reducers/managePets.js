@@ -21,4 +21,4 @@ export function render(){
   document.getElementById('container').innerHTML = `<ul>${list}</ul>`
 }
 
-dispatch({ type: '@@INIT' })
+// dispatch({ type: '@@INIT' })
