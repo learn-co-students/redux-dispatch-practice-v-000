@@ -47,6 +47,7 @@ describe('render', function(){
     global.document = jsdom.jsdom('<html><body><div id="container"></div></body></html>');
     dispatch({type: 'ADD_PET', pet: {name: 'Splash', species: 'Turtle', id: 100}})
     render()
+
     let container = document.getElementById('container')
     expect(container.innerHTML).toEqual('<ul><li>Splash</li></ul>')
   })
