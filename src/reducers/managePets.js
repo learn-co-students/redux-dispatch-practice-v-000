@@ -23,7 +23,7 @@ export function render() {
 
   let pet_names = state.pets.map( (pet) => '<li>' + pet.name + '</li>' );
 
-  global.document = jsdom.jsdom('<html><body><div id="container"></div></body></html>');
+  // global.document = jsdom.jsdom('<html><body><div id="container"></div></body></html>');
 
   global.document.getElementById("container").innerHTML = '<ul>' + pet_names.join("\n") + '</ul>';
 }
