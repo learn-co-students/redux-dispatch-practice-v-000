@@ -17,10 +17,9 @@ export function dispatch(action){
 }
 
 export function render(){
-  var node = '<ul>'
-  var petnode = state.pets.map((p) => {
+  let container = document.getElementById("container")
+  let petsNode = state.pets.map((p) => {
     return `<li>${p.name}</li>`
-  })
-  node = node + (petnode.join('')) + '</ul>';
-  document.getElementById("container").innerHTML = node
+  }).join('');
+  container.innerHTML = `<ul>${petsNode}</ul>`
 }
