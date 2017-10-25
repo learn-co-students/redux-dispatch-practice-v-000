@@ -3,7 +3,7 @@ export let state;
 export function managePets(state={pets: []}, action){
   switch(action.type){
     case 'ADD_PET':
-      return {pets: state.pets.concat(action.pet)}
+      return {...state, pets: state.pets.concat(action.pet)}
     case 'REMOVE_PET':
       return Object.assign({}, state, {pets: state.pets.filter(function(f) {return f.id !== action.id})})
     default:
