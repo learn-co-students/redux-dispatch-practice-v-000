@@ -22,15 +22,13 @@ export function dispatch(action){
 export function render(){
   // let petsString;
   // if (state.pets.length) {
-  //   const petMapString = state.pets.map((pet)=> {
-  //     return `<li>${pet.name}<li>`
-  //   })
-  //   petsString = '<ul>' + petMapString.join('') + '</ul>'
-  //   //console.log(petsString)
+    let petMapString = state.pets.map((pet)=> {
+      return `<li>${pet.name}</li>`
+    }).join(' ');
+    let petsString = `<ul>${petMapString}</ul>`
   // }
-  // document.getElementById('container').innerHTML = petsString || ''
-  const petsString = (state.pets.length) ? `<ul><li>${state.pets[0].name}</li></ul>` : ''
-  document.getElementById('container').innerHTML = petsString
+
+  document.getElementById('container').innerHTML = petsString 
 
 }
 
