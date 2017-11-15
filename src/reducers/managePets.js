@@ -22,7 +22,8 @@ export function dispatch(action){
 }
 
 export function render(){
-  document.innerHTML = state
+  let container = document.getElementById('container');
+  state.pets.forEach(function(pet) {
+    container.innerHTML = `<ul><li>${pet.name}</li></ul>`
+  });
 }
-
-dispatch({type: '@@INIT'})
