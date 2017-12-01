@@ -30,7 +30,7 @@ export function dispatch(action){
 }
 
 export function render(){
-  let petHTML = state.pets.map(pet => `<li>${pet.name}</li>`)
+  let petHTML = state.pets.map(pet => `<li>${pet.name}</li>`).join(' ')
   let petHTMLInList = `<ul>${petHTML}</ul>`
   document.getElementById('container').innerHTML = petHTMLInList
 }
