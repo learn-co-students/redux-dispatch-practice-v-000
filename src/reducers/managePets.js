@@ -17,9 +17,6 @@ export function dispatch(action){
 }
 
 export function render(){
-  let container = document.getElementById('container');
-  let petsList = state.pets.map((pet) => {
-    return `<li>${pet.name}</li>`;
-  }).join(' ');
-  container.innerHTML = `<ul>${petsList}</ul>`;
+  let pets = state.pets.map(pet => `<li>${pet.name}</li>`).join('');
+  document.getElementById('container').innerHTML = `<ul>${pets}</ul>`;
 }
