@@ -4,30 +4,28 @@ export let state;
 export function managePets(state = { pets: [] }, action){
   switch (action.type) {
     case 'ADD_PET':
-      return {pets: state.pets}
+      return {...state, pets: [...state.pets, action.pet]}
     case 'REMOVE_PET':
-      return {}
+      const petAry = state.pets.filter(pet => pet.id != action.id)
+      return {...state, pets: petAry}
     default:
       return state;
   }
 }
 
 
-
 //pass an action to the reducer, use return value to update the state
 export function dispatch(action){ 
-  state = managePets(state, action)
+  state = managePets(state, action);
   render();
 }
 
 
-
 export function render(){
-  document.innerHTML = state.count
+  let pets = state.pets.map((pet) => {
+    return `<li>${pet.name}</li>`
+  });
+  document.getElementById("container").innerHTML = `<ul>${pets}</ul>`;
 
-  // <div>
-  //   <ul id="container">
-  //     <li>pet name</li>
-  //   </ul>
-  // </div>
 }
+
