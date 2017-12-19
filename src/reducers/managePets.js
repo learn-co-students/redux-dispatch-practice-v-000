@@ -26,5 +26,8 @@ export function dispatch(action){
 }
 
 export function render(){
-  document.setInnerHTML = state.pets.map(pet => `<ul><li>${pet.name}</li></ul>`)
+  let body = document.getElementById('container')
+  let allPets = state.pets.map(pet => {
+    return `<li>${pet.name}</li>`}).join("  ")
+  body.innerHTML = `<ul>${allPets}</ul>`
 }
