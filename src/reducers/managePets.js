@@ -13,6 +13,7 @@ export function managePets(state = {pets:[]},action){
       }
     case 'REMOVE_PET':
         return {
+          ...state,
           pets:
           state.pets.filter( (pet) =>  pet.id !== action.id)
         }
