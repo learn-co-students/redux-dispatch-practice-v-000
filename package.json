@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Build a reducer to manage state",
   "engines": {
-    "node": "6.x",
-    "npm": "3.x"
+    "node": ">=6.x",
+    "npm": ">=3.x"
   },
   "main": "index.js",
   "scripts": {
@@ -16,17 +16,15 @@
     "type": "git",
     "url": "git+ssh://git@github.com/learn-co-curriculum/redux-reducer.git"
   },
-  "keywords": [
-    "javascript",
-    "flatiron",
-    "learn"
-  ],
+  "keywords": ["javascript", "flatiron", "learn"],
   "author": "The Flatiron School",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/learn-co-curriculum/introduction-to-react-assessment/issues"
+    "url":
+      "https://github.com/learn-co-curriculum/introduction-to-react-assessment/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/introduction-to-react-assessment#readme",
+  "homepage":
+    "https://github.com/learn-co-curriculum/introduction-to-react-assessment#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.18.0",
