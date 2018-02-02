@@ -1,5 +1,5 @@
-import { managePets, dispatch, state, render } from '../src/reducers/managePets';
-import  jsdom from 'jsdom';
+import {managePets, dispatch, state, render} from '../src/reducers/managePets';
+import jsdom from 'jsdom';
 import sinon from 'sinon';
 
 describe('managePets reducer', function() {

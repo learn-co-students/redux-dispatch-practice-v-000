@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "mocha-jsdom": "^1.1.0",
+    "node-gyp": "^3.6.2",
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
   }
