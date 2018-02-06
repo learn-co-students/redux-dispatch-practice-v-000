@@ -2,11 +2,16 @@
   "name": "reducer-lab",
   "version": "0.1.0",
   "description": "Build a reducer to manage state",
+  "engines": {
+    "node": "6.x",
+    "npm": "3.x"
+  },
   "main": "index.js",
   "scripts": {
     "debug": "node-debug --hidden node_modules _mocha --watch",
     "debug-ide": "./bin/debug-ide",
-    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json",
+    "start": "python -m simpleHTTPServer"
   },
   "repository": {
     "type": "git",
