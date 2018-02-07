@@ -1,6 +1,4 @@
-// TYPICAL ACTION:
-//{type: "ADD_PET", pet: {name: 'avalanche', species: 'puppy', id: 101}}
-//{type: "REMOVE_PET", id: 101}
+
 export let state;
 export function managePets(state = {pets: []}, action){
   switch (action.type) {
@@ -19,19 +17,32 @@ export function dispatch(action){
   render();
 }
 
+// MY RENDER NOT USING SINGLE STRING INTERPOLATION
 export function render(){
   let container = document.getElementById('container');
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-  let petNames = state.pets.map(pet => pet.name);
   let list = document.createElement('ul');
-  for (let i = 0; i < petNames.length; i++) {
+  state.pets.map(pet => {
     let listItem = document.createElement('li');
-    listItem.innerHTML = petNames[i];
+    listItem.innerHTML = pet.name
     list.appendChild(listItem);
-  }
+  })
   container.appendChild(list);
 }
 
 // dispatch({type: '@@INIT'});
+
+// TYPICAL DISPATCH ACTION:
+//{type: "ADD_PET", pet: {name: 'avalanche', species: 'puppy', id: 101}}
+//{type: "REMOVE_PET", id: 101}
+
+//SOLUTION'S STRING INTERPOLATION KIND OF WAY.
+// export const render = () => {
+//   let container = document.getElementById('container');
+//   let petsList = state.pets.map((pet) => {
+//     return `<li>${pet.name}</li>`;
+//   }).join(' ');
+//   container.innerHTML = `<ul>${petsList}</ul>`;
+// }
