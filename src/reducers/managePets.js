@@ -30,8 +30,17 @@ export function dispatch(action){
 
 export function render(){
   let container = document.getElementById("container")
-  let petsList = state.pets.map((pet) => {
-    return `<li>${pet.name}</li>`;
-  }).join(' ');
-  container.innerHTML = `<ul>${petsList}</ul>`;
+  container.innerHTML = ''
+  let list = document.createElement("ul");
+  container.appendChild(list);
+
+  let petsList = state.pets.forEach(pet => {
+    let listItem = document.createElement("li");
+    listItem.innerHTML = pet.name
+    list.appendChild(listItem)
+  })
+  // let petsList = state.pets.map((pet) => {
+  //   return `<li>${pet.name}</li>`;
+  // }).join(' ');
+  // container.innerHTML = `<ul>${petsList}</ul>`;
 }
