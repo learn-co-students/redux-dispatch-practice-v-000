@@ -1,12 +1,27 @@
 export let state;
 
 
-export function managePets(){
+export function managePets(state = { pets: [] }, action){
+    switch (action.type) {
+ 
+      case 'ADD_PET':
+        return {...state, pets: [...state.pets, {'name': action.pet.name, 'id': action.pet.id, 'species': action.pet.species }] }
+      
+      case 'REMOVE_PET':
+        let index = state.pets.findIndex((element) => element.id === action.id)
+        return {...state, pets:[...state.pets.slice(0,index),...state.pets.slice(index+1)] }
+        
+      default:
+        return state;
+    }
 }
 
-export function dispatch(){
+export function dispatch(action){
+    state = managePets(state, action)
+    render()
 }
 
 export function render(){
-
+    // document.getElementById("container").innerHTML = `<ul><li>${state.pet.name}</li></ul>`
+    state.pets.map(pet => document.getElementById("container").innerHTML = `<ul><li>${pet.name}</li></ul>` )
 }
