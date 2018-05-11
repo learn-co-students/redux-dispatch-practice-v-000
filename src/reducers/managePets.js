@@ -18,9 +18,9 @@ export function dispatch(action){
 }
 
 export function render(){
-  
-  let petsList = state.pets.map((pet) => {
+  let allPets = state.pets.map((pet) => {
     return `<li>${pet.name}</li>`;
   }).join(' ');
-  document.getElementById('container').innerHTML = `<ul>${petsList}</ul>`;
+  
+  document.getElementById('container').innerHTML = `<ul>${allPets}</ul>`;
 }
