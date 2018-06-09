@@ -29,5 +29,4 @@ export function render() {
   const container = document.getElementById('container');
   const petsList = state.pets.map(pet => `<li>${pet.name}</li>`).join(' ');
   container.innerHTML = `<ul>${petsList}</ul>`
-  // petsList.forEach(el => container.appendChild(el));
 }
