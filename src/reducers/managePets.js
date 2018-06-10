@@ -31,12 +31,20 @@ export function dispatch(action){
   render()
 }
 
-export function render(){
-  let htmlToRender = '<ul>'
-  for (var pet in state.pets) {
-    htmlToRender += '<li>' + pet.name + '</li>'
-  }
-  htmlToRender += '</ul>'
-  document.getElementById('container').innerHTML = htmlToRender
-
+export const render = () => {
+  let container = document.getElementById('container');
+  let petsList = state.pets.map((pet) => {
+    return `<li>${pet.name}</li>`;
+  }).join(' ');
+  container.innerHTML = `<ul>${petsList}</ul>`;
 }
+
+// export function render(){
+//   let htmlToRender = '<ul>'
+//   for (var pet in state.pets) {
+//     htmlToRender += '<li>' + pet.name + '</li>'
+//   }
+//   htmlToRender += '</ul>'
+//   document.getElementById('container').innerHTML = htmlToRender
+//
+// }
