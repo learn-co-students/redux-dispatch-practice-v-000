@@ -4,7 +4,7 @@ import sinon from 'sinon';
 
 describe('managePets reducer', function() {
 
-  it("returns the existing state if there action's type doesn't match a type in the reducer", function() {
+  it("returns the existing state if the action's type doesn't match a type in the reducer", function() {
     let state = {pets: [{name: 'Splash', type: 'turtle', id: 100}]}
     expect(managePets(state, {type: 'Random Action Type'})).toEqual(state);
   })
