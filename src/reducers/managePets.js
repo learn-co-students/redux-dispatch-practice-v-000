@@ -30,9 +30,10 @@ export function dispatch(action){
 
 export function render(){
     let resultHtml = '<ul>';
-    state.pets.forEach(pet => {
-        resultHtml = resultHtml + '<li>' + pet.name + '</li>';
-    });
+    // state.pets.forEach(pet => {
+    //     resultHtml = resultHtml + '<li>' + pet.name + '</li>';
+    // });
+    resultHtml += state.pets.map(pet => `<li>${pet.name}</li>`);
     resultHtml += '</ul>';
     document.getElementById('container').innerHTML = resultHtml;
 }
