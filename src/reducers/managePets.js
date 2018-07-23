@@ -20,7 +20,7 @@ export function dispatch(action){
 }
 
 export function render(){
-  // .join or format further
-  const petsHTML = state.pets.map(pet => `<li>${pet.name}</li>`)
-  document.getElementById('container').innerHTML = `<ul>${petsHTML}</ul>`
+  const container = document.getElementById('container')
+  const petsHTML = state.pets.map((pet) => {return `<li>${pet.name}</li>`}).join(' ');
+  container.innerHTML = `<ul>${petsHTML}</ul>`
 }
