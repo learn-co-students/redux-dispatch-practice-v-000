@@ -1,6 +1,6 @@
 export let state;
 
-export function managePets(state = {pets: []}, action) {
+export const managePets = (state = {pets: []}, action) => {
   switch(action.type) {
     case 'ADD_PET':
       return {...state, pets: [...state.pets, action.pet]}
@@ -14,12 +14,12 @@ export function managePets(state = {pets: []}, action) {
   }
 }
 
-export function dispatch(action){
+export const dispatch = (action) => {
   state = managePets(state, action)
   render()
 }
 
-export function render(){
+export const render = () => {
   const container = document.getElementById('container')
   const petsHTML = state.pets.map((pet) => {return `<li>${pet.name}</li>`}).join(' ');
   container.innerHTML = `<ul>${petsHTML}</ul>`
