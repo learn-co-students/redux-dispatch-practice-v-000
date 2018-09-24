@@ -10,8 +10,8 @@ describe('managePets reducer', function() {
   })
 
   it("adds the pet when type is ADD_PET and the action has a pet property with the pet's name, species and id", function(){
-    let state = {pets: [{name: 'Splash', type: 'turtle', id: 100}]}
-    expect(managePets(state, {type: "ADD_PET", pet: {name: 'avalanche', species: 'puppy', id: 101}})).toEqual({pets: [{name: 'Splash', type: 'turtle', id: 100}, {name: 'avalanche', species: 'puppy', id: 101}]});
+    let state = {pets: [{name: 'Splash', species: 'turtle', id: 100}]}
+    expect(managePets(state, {type: "ADD_PET", pet: {name: 'avalanche', species: 'puppy', id: 101}})).toEqual({pets: [{name: 'Splash', species: 'turtle', id: 100}, {name: 'avalanche', species: 'puppy', id: 101}]});
   })
 
   it("removes the pet when action type is REMOVE_PET and the action has a property of id for the pet to be removed", function(){
