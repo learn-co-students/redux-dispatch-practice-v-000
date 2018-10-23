@@ -19,8 +19,8 @@ export function dispatch(action){
 }
 
 export function render(){
-  let html = '<ul>'
-  state.pets.forEach(p => html += `<li>${p.name}</li>`)
-  html += '</ul>'
+  let html = '<ul><li>'
+  state.pets.forEach(p => html += p.name)
+  html += '</li></ul>'
   document.getElementById('container').innerHTML = html;
 }
