@@ -1,12 +1,35 @@
 export let state;
 
-
-export function managePets(){
+export const managePets = (state = { pets: [] }, action) => {
+  switch(action.type) {
+    case 'ADD_PET':
+      return {
+        ...state,
+        pets: [
+          ...state.pets,
+          action.pet
+        ]
+      }
+    case 'REMOVE_PET':
+      const petIndex = state.pets.findIndex(pet => pet.id === action.id)
+      return {
+        ...state,
+        pets: [
+          ...state.pets.slice(0, petIndex),
+          ...state.pets.slice(petIndex + 1)
+        ]
+      }
+    default:
+      return state;
+  }
 }
 
-export function dispatch(){
+export const dispatch = (action) => {
+  state = managePets(state, action);
+  render();
 }
 
-export function render(){
-
+export const render = () => {
+  let html = `<ul>${state.pets.map(pet => "<li>" + pet.name + "</li>")}</ul>`;
+  document.getElementById('container').innerHTML = html;
 }
